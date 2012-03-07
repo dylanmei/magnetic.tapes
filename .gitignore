@@ -1,0 +1,17 @@
+[Bb]in/
+[Dd]ebug/
+[Oo]bj/
+[Rr]elease/
+test-results/
+*.[Rr]e[Ss]harper*
+_[Rr]e[Ss]harper.*/
+*.[Cc]ache
+*.csproj.user
+*.sln.cache
+*.suo
+*.user
+*.orig
+*.pidb
+*.userprefs
+.DS_Store
+AssemblyInfo.cs
