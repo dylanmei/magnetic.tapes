@@ -50,4 +50,7 @@
   <ItemGroup>
     <Folder Include="RSS\" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
 </Project>

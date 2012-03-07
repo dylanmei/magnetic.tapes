@@ -4,16 +4,17 @@ using Magnetic.Tapes;
 
 namespace Magnetic.Example.Tests.RSS
 {
+	[SetUpFixture]
 	public class Setup
 	{
-		[TestFixtureSetUp]
+		[SetUp]
 		public void Init() {
 			TapeMachine.Startup(config => {
 				config.LibraryPath = "Tapes";
 			});
 		}
 
-		[TestFixtureTearDown]
+		[TearDown]
 		public void Teardown() {
 			TapeMachine.Shutdown();
 		}

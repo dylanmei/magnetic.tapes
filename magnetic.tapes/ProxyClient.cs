@@ -20,7 +20,7 @@ namespace Magnetic.Tapes
 		
 		public ProxyClient(Socket socket)
 		{
-			Console.WriteLine ("Creating Client...");
+//			Console.WriteLine ("Creating Client...");
 			
 			remoteBuffer = new byte[4096];
 			clientBuffer = new byte[4096];
@@ -28,7 +28,7 @@ namespace Magnetic.Tapes
 		}
 		
 		public void Dispose() {
-			Console.WriteLine ("Disposing Client...");
+//			Console.WriteLine ("Disposing Client...");
 			if (clientSocket != null) clientSocket.Kill();
 			if (remoteSocket != null) remoteSocket.Kill();
 			if (completeHandler != null)
