@@ -48,6 +48,8 @@
     <Compile Include="Socket.cs" />
     <Compile Include="ProxyClient.cs" />
     <Compile Include="Interaction.cs" />
+    <Compile Include="ITape.cs" />
+    <Compile Include="TapeRecorder.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

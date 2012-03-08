@@ -49,7 +49,7 @@
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\Dylan\Projects\magnetic.tapes\magnetic.tapes\Magnetic.Tapes.csproj">
+    <ProjectReference Include="..\magnetic.tapes\Magnetic.Tapes.csproj">
       <Project>{88F03A09-94FB-4B55-801A-B3AEAC39A5DF}</Project>
       <Name>Magnetic.Tapes</Name>
     </ProjectReference>

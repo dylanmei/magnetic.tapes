@@ -5,10 +5,10 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>10.0.0</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{725033D2-BF60-4B1F-8B87-1ECB810D1A76}</ProjectGuid>
+    <ProjectGuid>{AB5033D2-BF60-4B1F-8B87-1ECB810D1A98}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>Magnetic.Example.Tests</RootNamespace>
-    <AssemblyName>magnetic.example.tests</AssemblyName>
+    <RootNamespace>Magnetic.Tapes.Tests</RootNamespace>
+    <AssemblyName>magnetic.tapes.tests</AssemblyName>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -34,11 +34,13 @@
     <Reference Include="nunit.framework, Version=2.4.8.0, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Xml.Linq" />
+    <Reference Include="Moq">
+      <HintPath>..\depends\Moq.4.0.10827\NET40\Moq.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="RSS\Reader.cs" />
-    <Compile Include="RSS\HeaderTests.cs" />
-    <Compile Include="RSS\Setup.cs" />
+    <Compile Include="Setup.cs" />
+    <Compile Include="Recordings\Interactions.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -48,9 +50,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="RSS\" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="app.config" />
+    <Folder Include="Recordings\" />
   </ItemGroup>
 </Project>

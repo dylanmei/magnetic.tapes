@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Magnetic.Tapes", "magnetic.tapes\Magnetic.Tapes.csproj", "{88F03A09-94FB-4B55-801A-B3AEAC39A5DF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Magnetic.Example.Specs", "..\..\..\dylan\Projects\magnetic.tapes\Magnetic.Example.Specs\Magnetic.Example.Specs.csproj", "{66DCF1EB-63E6-4B14-8A84-890BF15FE79D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Magnetic.Example.Specs", "magnetic.example.specs\Magnetic.Example.Specs.csproj", "{66DCF1EB-63E6-4B14-8A84-890BF15FE79D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Magnetic.Example.Tests", "..\..\..\dylan\Projects\magnetic.tapes\Magnetic.Example.Tests\Magnetic.Example.Tests.csproj", "{725033D2-BF60-4B1F-8B87-1ECB810D1A76}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Magnetic.Example.Tests", "magnetic.example.tests\Magnetic.Example.Tests.csproj", "{725033D2-BF60-4B1F-8B87-1ECB810D1A76}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Magnetic.Tapes.Tests", "magnetic.tapes.tests\Magnetic.Tapes.Tests.csproj", "{AB5033D2-BF60-4B1F-8B87-1ECB810D1A98}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -18,8 +20,12 @@ Global
 		{66DCF1EB-63E6-4B14-8A84-890BF15FE79D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{66DCF1EB-63E6-4B14-8A84-890BF15FE79D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{725033D2-BF60-4B1F-8B87-1ECB810D1A76}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB5033D2-BF60-4B1F-8B87-1ECB810D1A98}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{725033D2-BF60-4B1F-8B87-1ECB810D1A76}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB5033D2-BF60-4B1F-8B87-1ECB810D1A98}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB5033D2-BF60-4B1F-8B87-1ECB810D1A98}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{725033D2-BF60-4B1F-8B87-1ECB810D1A76}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB5033D2-BF60-4B1F-8B87-1ECB810D1A98}.Release|Any CPU.Build.0 = Release|Any CPU
 		{725033D2-BF60-4B1F-8B87-1ECB810D1A76}.Release|Any CPU.Build.0 = Release|Any CPU
 		{88F03A09-94FB-4B55-801A-B3AEAC39A5DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{88F03A09-94FB-4B55-801A-B3AEAC39A5DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
@@ -27,6 +33,6 @@ Global
 		{88F03A09-94FB-4B55-801A-B3AEAC39A5DF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
-		StartupItem = ..\..\..\dylan\Projects\magnetic.tapes\Magnetic.Example.Tests\Magnetic.Example.Tests.csproj
+		StartupItem = magnetic.tapes.tests\Magnetic.Tapes.Tests.csproj
 	EndGlobalSection
 EndGlobal
