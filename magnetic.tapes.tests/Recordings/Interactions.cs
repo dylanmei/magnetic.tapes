@@ -23,13 +23,8 @@ namespace Magnetic.Tapes.Tests
 	[TestFixture]
 	public class When_recording_an_interaction : InteractionSpecification {
 		[Test]
-		public void it_should_record_the_request() {
-			tape.Verify(t => t.Write(interaction.Request), Times.Once());
-		}
-		
-		[Test]
-		public void it_should_record_the_response() {
-			tape.Verify(t => t.Write(interaction.Response), Times.Once());
+		public void it_should_be_written_to_tape() {
+			tape.Verify(t => t.Write(interaction), Times.Once());
 		}
 	}
 }

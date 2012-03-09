@@ -37,10 +37,14 @@
     <Reference Include="Moq">
       <HintPath>..\depends\Moq.4.0.10827\NET40\Moq.dll</HintPath>
     </Reference>
+    <Reference Include="FluentAssertions">
+      <HintPath>..\depends\FluentAssertions1.7.0\net40\FluentAssertions.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Setup.cs" />
     <Compile Include="Recordings\Interactions.cs" />
+    <Compile Include="Recordings\XmlTapes.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

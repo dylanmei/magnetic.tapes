@@ -10,8 +10,7 @@ namespace Magnetic.Tapes
 		}
 
 		public void Record(Interaction interaction) {
-			tape.Write (interaction.Request);
-			tape.Write (interaction.Response);
+			tape.Write (interaction);
 		}
 	}
 }

@@ -9,7 +9,6 @@ EX_TEST_PATH = File.join(PROJECT, 'magnetic.example.tests/bin/Debug/magnetic.exa
 task :default => 'test'
 
 task :test => :compile do
-  compile_solution
   system "mono #{NUNIT_PATH} #{TEST_PATH} -nologo -xml=./magnetic.tapes.tests/test-results/results.xml"
 end
 
