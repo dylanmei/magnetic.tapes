@@ -50,6 +50,7 @@
     <Compile Include="Interaction.cs" />
     <Compile Include="ITape.cs" />
     <Compile Include="TapeRecorder.cs" />
+    <Compile Include="XmlTape.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
