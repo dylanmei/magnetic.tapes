@@ -24,15 +24,20 @@ namespace Magnetic.Tapes
 	}
 	
 	public class Response {
-		public int Status;
-		public string Message;
 		public string Version;
+		public ResponseStatus Status;
 		public NameValueDictionary Headers;
 		public string Body;
 		
 		public Response() {
+			Status = new ResponseStatus();
 			Headers = new NameValueDictionary();
 		}
+	}
+	
+	public class ResponseStatus {
+		public int Code;
+		public string Message;
 	}
 }
 

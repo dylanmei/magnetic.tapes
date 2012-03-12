@@ -17,7 +17,7 @@ namespace Magnetic.Tapes
 			var tree = new XElement("tape",
 			    new XElement("interaction", 
 					TransformRequest(interaction.Request),
-				    new XElement("response")
+			        TransformResponse(interaction.Response)
 			    )
 			);
 			
@@ -28,17 +28,28 @@ namespace Magnetic.Tapes
 			return new XElement("request",
 				new XElement("verb", request.Verb),
 				new XElement("path", request.Path),
-				new XElement("body", TransformRequestBody(request.Body)),
+				new XElement("body", TransformBody(request.Body)),
 				new XElement("headers",
 					from entry in request.Headers
-					select new XElement(entry.Key, entry.Value))
-			);
+					select new XElement(entry.Key, entry.Value)));
 		}
 
-		XText TransformRequestBody(string body) {                
+		XText TransformBody(string body) {                
 			return string.IsNullOrEmpty(body)
 				? new XText("")
 				: new XCData(body);
+		}
+		
+		XElement TransformResponse(Response response) {
+			return new XElement("response",
+				new XElement("status",
+			    	new XElement("code", response.Status.Code),
+			        new XElement("message", response.Status.Message)),
+			    new XElement("version", response.Version),
+			    new XElement("body", TransformBody(response.Body)),
+				new XElement("headers",
+					from entry in response.Headers
+					select new XElement(entry.Key, entry.Value)));
 		}
 	}
 }
