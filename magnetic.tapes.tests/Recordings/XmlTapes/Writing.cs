@@ -62,13 +62,13 @@ namespace Magnetic.Tapes.Tests.Recordings
 		}
 		
 		[Test]
-		public void it_should_write_the_http_verb() {
+		public void it_should_write_the_request_verb() {
 			document.XPathSelectElement("//request/verb").Value
 				.Should().Be("abc");
 		}
 		
 		[Test]
-		public void it_should_write_the_http_path() {
+		public void it_should_write_the_request_path() {
 			document.XPathSelectElement("//request/path").Value
 				.Should().Be("xyz");
 		}
@@ -81,26 +81,26 @@ namespace Magnetic.Tapes.Tests.Recordings
 		
 		[Test]
 		public void it_should_write_the_request_header_names_and_values() {
-			document.XPathSelectElement("//request/headers/a").Value
+			document.XPathSelectElement("//request/headers/header[@name='a']").Value
 				.Should().Be("raspberry");
-			document.XPathSelectElement("//request/headers/b").Value
+			document.XPathSelectElement("//request/headers/header[@name='b']").Value
 				.Should().Be("strawberry");
 		}
 
 		[Test]
-		public void it_should_write_the_http_status_code() {
+		public void it_should_write_the_response_status_code() {
 			document.XPathSelectElement("//response/status/code").Value
 				.Should().Be("123");
 		}
 
 		[Test]
-		public void it_should_write_the_http_status_message() {
+		public void it_should_write_the_response_status_message() {
 			document.XPathSelectElement("//response/status/message").Value
 				.Should().Be("abc");
 		}
 
 		[Test]
-		public void it_should_write_the_http_version() {
+		public void it_should_write_the_http_response_version() {
 			document.XPathSelectElement("//response/version").Value
 				.Should().Be("xyz");
 		}
@@ -113,9 +113,9 @@ namespace Magnetic.Tapes.Tests.Recordings
 
 		[Test]
 		public void it_should_write_the_response_header_names_and_values() {
-			document.XPathSelectElement("//response/headers/a").Value
+			document.XPathSelectElement("//response/headers/header[@name='a']").Value
 				.Should().Be("vanilla");
-			document.XPathSelectElement("//response/headers/b").Value
+			document.XPathSelectElement("//response/headers/header[@name='b']").Value
 				.Should().Be("chocolate");
 		}
 	}

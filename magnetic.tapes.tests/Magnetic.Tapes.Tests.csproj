@@ -45,6 +45,7 @@
     <Compile Include="Setup.cs" />
     <Compile Include="Recordings\Interactions.cs" />
     <Compile Include="Recordings\XmlTapes\Writing.cs" />
+    <Compile Include="Recordings\XmlTapes\Reading.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
