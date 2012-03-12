@@ -8,31 +8,31 @@ using System.Xml.XPath;
 using NUnit.Framework;
 using FluentAssertions;
 
-namespace Magnetic.Tapes.Tests
+namespace Magnetic.Tapes.Tests.Recordings
 {
-	public class XmlTapeSpecification :Specification
+	public class XmlTapeWriterSpecification :Specification
 	{
-		protected XmlTape tape;
+		protected XmlTapeWriter writer;
 		protected Interaction interaction;
-		protected XDocument xdocument;
+		protected XDocument document;
 		StringBuilder buffer;
 		
 		protected override void Context()
 		{
 			interaction = new Interaction();
 			buffer = new StringBuilder();
-			tape = new XmlTape(new StringWriter(buffer));
+			writer = new XmlTapeWriter(new StringWriter(buffer));
 		}
 		
 		protected override void Because() {
-			tape.Write(interaction);
-			xdocument = XDocument.Parse(buffer.ToString());
+			writer.Write(interaction);
+			document = XDocument.Parse(buffer.ToString());
 		}
 	}
 	
 	[TestFixture]
 	public class When_writing_an_interaction_to_tape
-		: XmlTapeSpecification {
+		: XmlTapeWriterSpecification {
 
 		protected override void Context() {
 			base.Context();
@@ -53,69 +53,69 @@ namespace Magnetic.Tapes.Tests
 		
 		[Test]
 		public void it_should_write_a_document_element() {
-			xdocument.Should().HaveRoot("tape");
+			document.Should().HaveRoot("tape");
 		}
 		
 		[Test]
 		public void it_should_write_an_interaction_element() {
-			xdocument.Root.Should().HaveElement("interaction");
+			document.Root.Should().HaveElement("interaction");
 		}
 		
 		[Test]
 		public void it_should_write_the_http_verb() {
-			xdocument.XPathSelectElement("//request/verb").Value
+			document.XPathSelectElement("//request/verb").Value
 				.Should().Be("abc");
 		}
 		
 		[Test]
 		public void it_should_write_the_http_path() {
-			xdocument.XPathSelectElement("//request/path").Value
+			document.XPathSelectElement("//request/path").Value
 				.Should().Be("xyz");
 		}
 		
 		[Test]
 		public void it_should_write_the_request_body() {
-			xdocument.XPathSelectElement("//request/body").Value
+			document.XPathSelectElement("//request/body").Value
 				.Should().Be("ice cream");
 		}
 		
 		[Test]
 		public void it_should_write_the_request_header_names_and_values() {
-			xdocument.XPathSelectElement("//request/headers/a").Value
+			document.XPathSelectElement("//request/headers/a").Value
 				.Should().Be("raspberry");
-			xdocument.XPathSelectElement("//request/headers/b").Value
+			document.XPathSelectElement("//request/headers/b").Value
 				.Should().Be("strawberry");
 		}
 
 		[Test]
 		public void it_should_write_the_http_status_code() {
-			xdocument.XPathSelectElement("//response/status/code").Value
+			document.XPathSelectElement("//response/status/code").Value
 				.Should().Be("123");
 		}
 
 		[Test]
 		public void it_should_write_the_http_status_message() {
-			xdocument.XPathSelectElement("//response/status/message").Value
+			document.XPathSelectElement("//response/status/message").Value
 				.Should().Be("abc");
 		}
 
 		[Test]
 		public void it_should_write_the_http_version() {
-			xdocument.XPathSelectElement("//response/version").Value
+			document.XPathSelectElement("//response/version").Value
 				.Should().Be("xyz");
 		}
 		
 		[Test]
 		public void it_should_write_the_response_body() {
-			xdocument.XPathSelectElement("//response/body").Value
+			document.XPathSelectElement("//response/body").Value
 				.Should().Be("cup cakes");
 		}
 
 		[Test]
 		public void it_should_write_the_response_header_names_and_values() {
-			xdocument.XPathSelectElement("//response/headers/a").Value
+			document.XPathSelectElement("//response/headers/a").Value
 				.Should().Be("vanilla");
-			xdocument.XPathSelectElement("//response/headers/b").Value
+			document.XPathSelectElement("//response/headers/b").Value
 				.Should().Be("chocolate");
 		}
 	}

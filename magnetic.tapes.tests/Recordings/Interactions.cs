@@ -5,12 +5,12 @@ using Moq;
 namespace Magnetic.Tapes.Tests
 {
 	public abstract class InteractionSpecification : Specification {
-		protected Mock<ITape> tape;
+		protected Mock<ITapeWriter> tape;
 		protected TapeRecorder recorder;
 		protected Interaction interaction;
 		
 		protected override void Context() {
-			tape = new Mock<ITape>();
+			tape = new Mock<ITapeWriter>();
 			interaction = new Interaction();
 			recorder = new TapeRecorder(tape.Object);
 		}

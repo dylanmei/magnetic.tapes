@@ -3,9 +3,9 @@ using System;
 namespace Magnetic.Tapes
 {
 	public class TapeRecorder {
-		ITape tape;
+		ITapeWriter tape;
 		
-		public TapeRecorder(ITape tape) {
+		public TapeRecorder(ITapeWriter tape) {
 			this.tape = tape;
 		}
 

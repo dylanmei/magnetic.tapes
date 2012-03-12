@@ -2,7 +2,7 @@ using System;
 
 namespace Magnetic.Tapes
 {
-	public interface ITape {
+	public interface ITapeWriter {
 		void Write(Interaction interaction);
 	}
 }

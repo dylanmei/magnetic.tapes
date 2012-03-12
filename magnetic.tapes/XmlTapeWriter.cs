@@ -6,10 +6,10 @@ using System.Xml.Linq;
 
 namespace Magnetic.Tapes
 {
-	public class XmlTape : ITape {
+	public class XmlTapeWriter : ITapeWriter {
 		XmlWriter writer;
 		
-		public XmlTape(TextWriter writer) {
+		public XmlTapeWriter(TextWriter writer) {
 			this.writer = new XmlTextWriter(writer);
 		}
 		
